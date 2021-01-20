@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: . 
+      dockerfile: ./docker/app/Dockerfile
+    volumes:
+      - static_data:/vol/web
+    environment:
+      - ALLOWED_HOSTS=127.0.0.1,localhost
+    depends_on:
+      - neo4j
+
+  proxy:
+    build:
+      context: ./docker/proxy
+    volumes:
+      - static_data:/vol/static
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app
+
+  neo4j:
+    build:
+      context: ./docker/neo4j
+    volumes:
+      - neo4j_data:/data
+    ports:
+      - "7474:7474"
+      - "7473:7473"
+      - "7687:7687"
+    environment:
+      - NEO4J_USER=admin_db
+      - NEO4j_PASSWORD=admin
+
+
+volumes:
+  static_data:
+  neo4j_data:
