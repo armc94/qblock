@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import TEST
+from .models import Book
 
 
-a = TEST()
+a = Book()
 
 # Register your models here.
