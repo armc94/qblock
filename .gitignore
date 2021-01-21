@@ -1,3 +1,6 @@
 *.pyc
 /venv
+qblock/qapp/migrations
+qblock/api/migrations
+qblock/users/migrations
 
