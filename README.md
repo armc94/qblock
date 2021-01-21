@@ -1,5 +1,6 @@
 ## Task management tool 
 
+### Startig up
 To start the app:
 1. enter the project folder 
 2. `sudo docker-compose build`
