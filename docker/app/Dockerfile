@@ -5,13 +5,13 @@ ENV PATH="/scripts:${PATH}"
 COPY ./requirements.txt /requirements.txt
 
 RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm gcc linux-headers  python3 python-pip 
+RUN pacman -S --noconfirm gcc linux-headers  python3 python-pip
 
 RUN pip install -r /requirements.txt
 
 RUN mkdir /qblock
-COPY ./qblock /qblock
-WORKDIR /qblock	
+COPY ./src /qblock
+WORKDIR /qblock
 
 COPY ./docker/app/entrypoint.sh /scripts/
 RUN chmod +x /scripts/entrypoint.sh
