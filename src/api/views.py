@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 
 @api_view(['GET'])
 def api_overview(request):
-
     api_urls = {
             'List': '/user-list',
             'Detail View': '/user-detail/<str:pk>/'

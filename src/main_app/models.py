@@ -1,5 +1,4 @@
-from neomodel import StructuredNode, StringProperty, DateProperty
+from django.db import models
 
-class Book(StructuredNode):
-    title = StringProperty(unique_index=True)
-    published = StringProperty()
+class Book(models.Model):
+    pass
