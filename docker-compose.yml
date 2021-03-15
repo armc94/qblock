@@ -3,7 +3,7 @@ version: '3.7'
 services:
   app:
     build:
-      context: . 
+      context: .
       dockerfile: ./docker/app/Dockerfile
     volumes:
       - static_data:/vol/web
@@ -32,8 +32,8 @@ services:
       - "7473:7473"
       - "7687:7687"
     environment:
-      - NEO4J_USER=admin_db
-      - NEO4j_PASSWORD=admin
+      - NEO4J_USER=neo4j
+      - NEO4j_PASSWORD=useruser22
 
 
 volumes:
